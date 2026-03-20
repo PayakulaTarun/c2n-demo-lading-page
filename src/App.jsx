@@ -17,7 +17,7 @@ function App() {
       <nav className="premium-nav">
         <div className="glass-panel">
           <a href="/" className="nav-logo">
-            <Hexagon size={28} style={{color: '#00F0FF'}} />
+            <Hexagon size={28} color="#3B82F6" />
             <span style={{letterSpacing: '1px'}}>C2N</span>
           </a>
           <div className="nav-links">
@@ -58,7 +58,7 @@ function App() {
 
           <div className="bento-grid">
             <div className="glass-panel bento-card bento-large">
-              <div style={{color: '#00F0FF', marginBottom: '16px'}}><Shield size={32} /></div>
+              <div style={{color: '#3B82F6', marginBottom: '16px'}}><Shield size={32} /></div>
               <h2>Built for Scale, Designed for Security.</h2>
               <p>C2N is a privately owned IT Support and IT Services business formed in 2016. Today we're proud to boast a strong team of IT engineers who thrive on rolling up their sleeves, solving your complex IT problems, and meeting your precise business needs head-on.</p>
               <div className="bento-img-area"></div>
@@ -83,7 +83,7 @@ function App() {
       </section>
 
       {/* Services Premium Layout */}
-      <section id="services" className="section services-premium" style={{background: 'rgba(255,255,255,0.01)'}}>
+      <section id="services" className="section services-premium">
         <div className="container">
           <div className="text-center">
             <div className="pill-badge">Core Services</div>
@@ -128,20 +128,20 @@ function App() {
         <div className="container text-center">
           <div className="pill-badge">Industries</div>
           <h2 style={{fontSize: '40px', marginBottom: '24px'}}>Managed IT services customized<br/>for your industry</h2>
-          <p style={{color: '#94A3B8', maxWidth: '600px', margin: '0 auto'}}>Our vertical solutions expertise allows your business to streamline workflow, and increase productivity.</p>
+          <p style={{color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto'}}>Our vertical solutions expertise allows your business to streamline workflow, and increase productivity.</p>
 
           <div className="ind-premium-grid">
-            <div className="glass-panel ind-pill"><Heart size={20} color="#00F0FF" /> Healthcare</div>
-            <div className="glass-panel ind-pill"><MonitorPlay size={20} color="#00F0FF" /> Media</div>
-            <div className="glass-panel ind-pill"><Settings size={20} color="#00F0FF" /> Manufacturing</div>
-            <div className="glass-panel ind-pill"><Users size={20} color="#00F0FF" /> Non Profit</div>
-            <div className="glass-panel ind-pill"><MessageSquare size={20} color="#00F0FF" /> Communications</div>
+            <div className="glass-panel ind-pill"><Heart size={20} color="#3B82F6" /> Healthcare</div>
+            <div className="glass-panel ind-pill"><MonitorPlay size={20} color="#3B82F6" /> Media</div>
+            <div className="glass-panel ind-pill"><Settings size={20} color="#3B82F6" /> Manufacturing</div>
+            <div className="glass-panel ind-pill"><Users size={20} color="#3B82F6" /> Non Profit</div>
+            <div className="glass-panel ind-pill"><MessageSquare size={20} color="#3B82F6" /> Communications</div>
           </div>
         </div>
       </section>
 
       {/* Dynamic Blog Section */}
-      <section id="resources" className="section" style={{background: 'rgba(255,255,255,0.01)'}}>
+      <section id="resources" className="section">
         <div className="container">
           <div className="text-center">
             <div className="pill-badge">Resources</div>
@@ -152,10 +152,10 @@ function App() {
             <div className="glass-panel blog-main-card">
               <div className="bm-img"></div>
               <div className="bm-body">
-                <div style={{color: '#00F0FF', fontSize: '13px', fontWeight: 600, marginBottom: '8px'}}>MAY 8, 2018</div>
+                <div style={{color: '#3B82F6', fontSize: '13px', fontWeight: 600, marginBottom: '8px', letterSpacing: '1px'}}>MAY 8, 2018</div>
                 <h3>5 Lightning Navigation Tips for Salesforce Users</h3>
-                <p style={{color: '#94A3B8', marginBottom: '24px'}}>Salesforce Lightning has truly brought a lot of power into the hands of both Admins & Users. Meaning that the UI has fundamentally accelerated daily tasks.</p>
-                <button className="glass-btn" style={{border: 'none', background: 'rgba(255,255,255,0.1)'}}>Read full article <ArrowRight size={16}/></button>
+                <p style={{color: 'var(--text-secondary)', marginBottom: '24px'}}>Salesforce Lightning has truly brought a lot of power into the hands of both Admins & Users. Meaning that the UI has fundamentally accelerated daily tasks.</p>
+                <button className="glass-btn" style={{border: 'none', background: 'rgba(59,130,246,0.1)', color: '#3B82F6'}}>Read full article <ArrowRight size={16}/></button>
               </div>
             </div>
 
@@ -164,28 +164,28 @@ function App() {
                 <div>
                   <div className="bl-date">MAY 8, 2018</div>
                   <h4>What Does a Salesforce Admin Do?</h4>
-                  <a href="#" style={{color: '#94A3B8', fontSize: '13px'}}>Read more &rarr;</a>
+                  <a href="#" style={{color: 'var(--text-secondary)', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '4px', marginTop: '6px', fontWeight: '500'}}>Read more <ArrowRight size={14}/></a>
                 </div>
               </div>
               <div className="glass-panel bl-item">
                 <div>
                   <div className="bl-date">MAY 8, 2018</div>
                   <h4>Tips to make Lightning Web Component Performance at front line</h4>
-                  <a href="#" style={{color: '#94A3B8', fontSize: '13px'}}>Read more &rarr;</a>
+                  <a href="#" style={{color: 'var(--text-secondary)', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '4px', marginTop: '6px', fontWeight: '500'}}>Read more <ArrowRight size={14}/></a>
                 </div>
               </div>
               <div className="glass-panel bl-item">
                 <div>
                   <div className="bl-date">MAY 8, 2018</div>
                   <h4>Scan & index manager delivers productivity at beaumont hospital</h4>
-                  <a href="#" style={{color: '#94A3B8', fontSize: '13px'}}>Read more &rarr;</a>
+                  <a href="#" style={{color: 'var(--text-secondary)', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '4px', marginTop: '6px', fontWeight: '500'}}>Read more <ArrowRight size={14}/></a>
                 </div>
               </div>
               <div className="glass-panel bl-item">
                 <div>
                   <div className="bl-date">MAY 8, 2018</div>
                   <h4>Partnering with IT provider helps erie manufacturing company thrive</h4>
-                  <a href="#" style={{color: '#94A3B8', fontSize: '13px'}}>Read more &rarr;</a>
+                  <a href="#" style={{color: 'var(--text-secondary)', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '4px', marginTop: '6px', fontWeight: '500'}}>Read more <ArrowRight size={14}/></a>
                 </div>
               </div>
             </div>
@@ -219,7 +219,7 @@ function App() {
         <div className="container f-grid">
           <div>
             <div className="f-logo">
-              <Hexagon size={32} color="#00F0FF" /> C2N
+              <Hexagon size={32} color="#3B82F6" /> C2N
             </div>
             <div className="f-contact">
               Plot: 810, SVS Sowdha, 2nd Floor, Ayyappa Society,<br/>
