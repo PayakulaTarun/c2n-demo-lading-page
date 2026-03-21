@@ -42,8 +42,7 @@ function App() {
       <nav className="premium-nav">
         <div className="nav-glass">
           <a href="#" className="nav-logo">
-            <Network size={28} color="#3b82f6" />
-            <span style={{letterSpacing: '1px'}}>C2N</span>
+            <img src="/C2N-logo.png" alt="C2N Logo" style={{ height: '32px', objectFit: 'contain' }} />
           </a>
           <div className="nav-links">
             <a href="#services">Services</a>
@@ -310,8 +309,7 @@ function App() {
             
             <div className="footer-brand">
               <a href="#" className="nav-logo">
-                <Network size={28} color="#3b82f6" />
-                <span style={{letterSpacing: '1px'}}>C2N</span>
+                <img src="/C2N-logo.png" alt="C2N Logo" style={{ height: '36px', objectFit: 'contain' }} />
               </a>
               <p>Delivering premium IT solutions, digital transformation, and business value through cutting-edge architecture design.</p>
               <div className="footer-socials">
