@@ -34,6 +34,64 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+[data-theme="light"] {
+  --c-bg: #f8fafc;
+  --c-bg-surface: #ffffff;
+  --c-bg-glass: rgba(255, 255, 255, 0.7);
+  --c-bg-glass-hover: rgba(248, 250, 252, 0.9);
+  
+  --c-text-main: #0f172a;
+  --c-text-muted: #475569;
+  --c-border: rgba(0, 0, 0, 0.08);
+  --c-border-hover: rgba(0, 0, 0, 0.15);
+
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.15);
+  --shadow-glow-hover: 0 0 30px rgba(59, 130, 246, 0.3);
+}
+
+[data-theme="light"] .grid-bg {
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+[data-theme="light"] .glow-blue, [data-theme="light"] .glow-purple {
+  opacity: 0.3;
+}
+
+[data-theme="light"] .nav-glass {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .floating-element {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .btn-outline {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .industry-icon,
+[data-theme="light"] .footer-socials a,
+[data-theme="light"] .btn-outline {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .footer-socials a:hover {
+  background: var(--c-primary);
+  color: #fff;
+}
+
+[data-theme="light"] .pill-badge {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: var(--c-primary);
+}
+
 * {
   margin: 0;
   padding: 0;

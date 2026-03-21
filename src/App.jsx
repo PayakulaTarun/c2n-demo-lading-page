@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Network, Code2, LineChart, TestTube, Users, Database, CloudFog,
   HeartPulse, ShoppingCart, Film, Factory, Landmark, UsersRound,
   ArrowRight, ShieldCheck, Cpu, HeadphonesIcon, Settings,
-  MapPin, Phone, Mail, Twitter, Linkedin, Github
+  MapPin, Phone, Mail, Twitter, Linkedin, Github, Sun, Moon
 } from 'lucide-react';
 import './App.css';
 
@@ -22,6 +22,16 @@ const staggerContainer = {
 };
 
 function App() {
+  const [theme, setTheme] = useState('dark');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
   return (
     <div className="app-wrapper">
       <div className="grid-bg"></div>
@@ -41,9 +51,21 @@ function App() {
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
           </div>
-          <button className="btn-primary" style={{padding: '8px 20px', fontSize: '14px'}}>
-            Get Started
-          </button>
+          <div style={{display: 'flex', alignItems: 'center', gap: '16px'}}>
+            <button
+              onClick={toggleTheme}
+              style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                width: '36px', height: '36px', borderRadius: '50%',
+                background: 'rgba(59, 130, 246, 0.1)', cursor: 'pointer'
+              }}
+            >
+              {theme === 'dark' ? <Sun size={18} color="var(--c-primary)" /> : <Moon size={18} color="var(--c-primary)" />}
+            </button>
+            <button className="btn-primary" style={{padding: '8px 20px', fontSize: '14px'}}>
+              Get Started
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -51,13 +73,13 @@ function App() {
       <section className="hero-section">
         {/* Floating background elements */}
         <div className="floating-element" style={{top: '20%', left: '15%', animationDelay: '0s'}}>
-          <Database size={32} color="#8b5cf6" />
+          <Database size={32} color="var(--c-accent)" />
         </div>
         <div className="floating-element" style={{top: '60%', right: '15%', animationDelay: '2s'}}>
-          <Cpu size={32} color="#00f0ff" />
+          <Cpu size={32} color="var(--c-neon)" />
         </div>
         <div className="floating-element" style={{top: '70%', left: '25%', animationDelay: '4s'}}>
-          <CloudFog size={32} color="#3b82f6" />
+          <CloudFog size={32} color="var(--c-primary)" />
         </div>
 
         <motion.div 
@@ -86,9 +108,10 @@ function App() {
       </section>
 
       {/* SERVICES SECTION */}
-      <section id="services" className="section services-section container">
-        <motion.div 
-          className="section-header"
+      <div className="bg-surface">
+        <section id="services" className="section services-section container">
+          <motion.div 
+            className="section-header"
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
         >
           <div className="pill-badge">Expertise</div>
@@ -117,6 +140,7 @@ function App() {
           ))}
         </motion.div>
       </section>
+      </div>
 
       {/* ABOUT SECTION */}
       <section id="about" className="section container">
@@ -156,8 +180,8 @@ function App() {
           >
             <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000" alt="Tech Environment" />
             <div className="floating-element" style={{bottom: '30px', left: '30px', animation: 'float 5s ease-in-out infinite reverse'}}>
-              <div style={{display: 'flex', alignItems: 'center', gap: '12px', color: '#fff', fontWeight: 'bold'}}>
-                <ShieldCheck size={24} color="#00f0ff" /> Secure Infrastructure
+              <div style={{display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--c-text-main)', fontWeight: 'bold'}}>
+                <ShieldCheck size={24} color="var(--c-neon)" /> Secure Infrastructure
               </div>
             </div>
           </motion.div>
@@ -165,9 +189,10 @@ function App() {
       </section>
 
       {/* INDUSTRIES SECTION */}
-      <section id="industries" className="section container">
-        <motion.div 
-          className="section-header"
+      <div className="bg-surface">
+        <section id="industries" className="section container">
+          <motion.div 
+            className="section-header"
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
         >
           <div className="pill-badge">Sectors</div>
@@ -205,6 +230,7 @@ function App() {
           ))}
         </motion.div>
       </section>
+      </div>
 
       {/* WHY CHOOSE US */}
       <section className="section container">
