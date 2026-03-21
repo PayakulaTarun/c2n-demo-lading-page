@@ -79,7 +79,7 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  padding: 0 24px;
+  padding: 0 clamp(24px, 6vw, 80px);
 }
 
 .nav-glass {
@@ -503,7 +503,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 30px;
-  margin: 100px 24px;
+  margin: 100px clamp(24px, 6vw, 80px);
   padding: 100px 40px;
   text-align: center;
   background: rgba(17, 24, 39, 0.8);
