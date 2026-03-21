@@ -132,7 +132,7 @@ function App() {
               We bridge the gap between complex technological challenges and streamlined business operations. At C2N, we believe technology should be an enabler, not a bottleneck. For years we've partnered with startups to tech-enterprises across the globe, transforming legacy architecture into scalable, secure powerhouses. Our core focus is the relentless delivery of long-term business value through precise strategy and execution.
             </motion.p>
             
-            <motion.div variants={fadeIn} className="stats-grid glass-panel" style={{padding: '24px 16px'}}>
+            <motion.div variants={fadeIn} className="stats-grid">
               <div className="stat-card">
                 <div className="stat-number">250+</div>
                 <div className="stat-label">Projects</div>
