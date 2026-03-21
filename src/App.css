@@ -331,9 +331,21 @@
 }
 
 .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.stats-divider {
+  width: 2px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.stat-card {
+  text-align: center;
+  flex: 1;
 }
 
 .stat-card {
@@ -395,8 +407,7 @@
 }
 
 .industry-card:hover {
-  transform: translateY(-5px);
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(59, 130, 246, 0.05);
   border-color: rgba(59, 130, 246, 0.3);
 }
 

@@ -128,28 +128,24 @@ function App() {
             <motion.h2 variants={fadeIn} className="about-highlight">
               C2N is a trusted IT services company delivering business value with <span className="text-gradient">cutting-edge technology</span>.
             </motion.h2>
-            <motion.p variants={fadeIn} style={{color: 'var(--c-text-muted)', marginBottom: '40px', fontSize: '1.1rem'}}>
-              We bridge the gap between complex technological challenges and streamlined business operations. Our mission is to engineer systems that practically manage themselves.
+            <motion.p variants={fadeIn} style={{color: 'var(--c-text-muted)', marginBottom: '40px', fontSize: '1.1rem', lineHeight: '1.7'}}>
+              We bridge the gap between complex technological challenges and streamlined business operations. At C2N, we believe technology should be an enabler, not a bottleneck. For years we've partnered with startups to tech-enterprises across the globe, transforming legacy architecture into scalable, secure powerhouses. Our core focus is the relentless delivery of long-term business value through precise strategy and execution.
             </motion.p>
             
-            <motion.div variants={fadeIn} className="stats-grid">
-              <div className="glass-panel stat-card">
-                <div className="stat-number">
-                  250+
-                </div>
+            <motion.div variants={fadeIn} className="stats-grid glass-panel" style={{padding: '24px 16px'}}>
+              <div className="stat-card">
+                <div className="stat-number">250+</div>
                 <div className="stat-label">Projects</div>
               </div>
-              <div className="glass-panel stat-card">
-                <div className="stat-number">
-                  100+
-                </div>
+              <div className="stats-divider"></div>
+              <div className="stat-card">
+                <div className="stat-number">100+</div>
                 <div className="stat-label">Clients</div>
               </div>
-              <div className="glass-panel stat-card" style={{gridColumn: '1 / -1'}}>
-                <div className="stat-number">
-                  75+
-                </div>
-                <div className="stat-label">Expert Engineers</div>
+              <div className="stats-divider"></div>
+              <div className="stat-card">
+                <div className="stat-number">75+</div>
+                <div className="stat-label">Engineers</div>
               </div>
             </motion.div>
           </motion.div>
@@ -179,24 +175,34 @@ function App() {
         </motion.div>
 
         <motion.div 
-          className="glass-panel" style={{padding: '40px'}}
+          className="industries-grid"
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
         >
-          <div className="industries-grid">
-            {[
-              { icon: <HeartPulse size={30} />, name: 'Healthcare' },
-              { icon: <ShoppingCart size={30} />, name: 'Retail' },
-              { icon: <Film size={30} />, name: 'Media' },
-              { icon: <Factory size={30} />, name: 'Manufacturing' },
-              { icon: <Landmark size={30} />, name: 'Finance' },
-              { icon: <UsersRound size={30} />, name: 'Non-Profit' },
-            ].map((ind, i) => (
-              <motion.div key={i} variants={fadeIn} className="industry-card glass-panel" style={{background: 'rgba(255,255,255,0.02)'}}>
-                <div className="industry-icon">{ind.icon}</div>
-                <h4 style={{fontSize: '1.2rem'}}>{ind.name}</h4>
+          {[
+            { icon: <HeartPulse size={30} />, name: 'Healthcare' },
+            { icon: <ShoppingCart size={30} />, name: 'Retail' },
+            { icon: <Film size={30} />, name: 'Media' },
+            { icon: <Factory size={30} />, name: 'Manufacturing' },
+            { icon: <Landmark size={30} />, name: 'Finance' },
+            { icon: <UsersRound size={30} />, name: 'Non-Profit' },
+          ].map((ind, i) => (
+            <motion.div 
+              key={i} 
+              variants={fadeIn} 
+              className="industry-card"
+              whileHover={{ scale: 1.05, y: -10, boxShadow: '0 0 25px rgba(59, 130, 246, 0.4)' }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <motion.div 
+                className="industry-icon"
+                whileHover={{ rotate: 10, scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                {ind.icon}
               </motion.div>
-            ))}
-          </div>
+              <h4 style={{fontSize: '1.2rem'}}>{ind.name}</h4>
+            </motion.div>
+          ))}
         </motion.div>
       </section>
 
