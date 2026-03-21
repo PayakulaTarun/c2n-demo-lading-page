@@ -258,7 +258,6 @@
   transition: var(--transition);
   position: relative;
   overflow: hidden;
-  group: hover;
 }
 
 .service-card::before {
@@ -518,7 +517,7 @@
 
 /* -------------- FOOTER -------------- */
 .footer {
-  padding: 80px 0 40px 0;
+  padding: 40px 0 20px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   background: var(--c-bg-surface);
 }
@@ -526,14 +525,15 @@
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 60px;
-  margin-bottom: 60px;
+  gap: 40px;
+  margin-bottom: 30px;
 }
 
 .footer-brand p {
   color: var(--c-text-muted);
-  margin-top: 16px;
-  margin-bottom: 24px;
+  margin-top: 12px;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
 }
 
 .footer-socials {
@@ -542,8 +542,8 @@
 }
 
 .footer-socials a {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.05);
   display: flex;
@@ -558,13 +558,14 @@
 }
 
 .footer-heading {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
   color: #fff;
 }
 
 .footer-links li {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
 }
 
 .footer-links a {
@@ -578,10 +579,10 @@
 
 .footer-bottom {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   color: var(--c-text-muted);
-  font-size: 14px;
+  font-size: 13px;
 }
 
 /* Responsive */
