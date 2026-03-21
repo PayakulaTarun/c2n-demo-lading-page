@@ -92,6 +92,31 @@
   color: var(--c-primary);
 }
 
+[data-theme="light"] .cta-section {
+  background: var(--grad-primary);
+  border: none;
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.25);
+}
+
+[data-theme="light"] .cta-bg {
+  opacity: 0;
+}
+
+[data-theme="light"] .cta-title {
+  color: #ffffff;
+}
+
+[data-theme="light"] .cta-title .text-gradient {
+  background: none;
+  -webkit-text-fill-color: #ffffff;
+}
+
+[data-theme="light"] .cta-section .btn-primary {
+  background: #ffffff;
+  color: var(--c-primary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
 * {
   margin: 0;
   padding: 0;
