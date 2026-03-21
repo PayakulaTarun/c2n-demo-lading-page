@@ -1,277 +1,342 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Shield, CloudLightning, Database, 
-  Hexagon, Heart, MonitorPlay, Settings, Users, MessageSquare, 
-  Twitter, Linkedin, Github, Activity, Search, Code, Smartphone
+  Network, Code2, LineChart, TestTube, Users, Database, CloudFog,
+  HeartPulse, ShoppingCart, Film, Factory, Landmark, UsersRound,
+  ArrowRight, ShieldCheck, Cpu, HeadphonesIcon, Settings,
+  MapPin, Phone, Mail, Twitter, Linkedin, Github
 } from 'lucide-react';
 import './App.css';
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2 }
+  }
+};
 
 function App() {
   return (
     <div className="app-wrapper">
-      
-      {/* Background Ambience */}
-      <div className="mesh-bg"></div>
-      
-      {/* Premium Floating Nav */}
+      <div className="grid-bg"></div>
+      <div className="glow-orb glow-blue"></div>
+      <div className="glow-orb glow-purple"></div>
+
+      {/* NAVBAR */}
       <nav className="premium-nav">
-        <div className="glass-panel">
-          <a href="/" className="nav-logo">
-            <Hexagon size={28} color="#3B82F6" />
+        <div className="nav-glass">
+          <a href="#" className="nav-logo">
+            <Network size={28} color="#3b82f6" />
             <span style={{letterSpacing: '1px'}}>C2N</span>
           </a>
           <div className="nav-links">
-            <a href="#company">Company</a>
-            <a href="#services">IT Services</a>
+            <a href="#services">Services</a>
             <a href="#industries">Industries</a>
-            <a href="#resources">Resources</a>
+            <a href="#about">About</a>
             <a href="#contact">Contact</a>
           </div>
-          <button className="glass-btn" style={{fontSize: '13px', padding: '10px 20px'}}>
-            Request Consultation <ArrowRight size={14} />
+          <button className="btn-primary" style={{padding: '8px 20px', fontSize: '14px'}}>
+            Get Started
           </button>
         </div>
       </nav>
 
-      {/* Hero Epic */}
-      <main className="hero-premium">
-        <div className="mesh-glow" style={{top: '20%', left: '30%'}}></div>
-        <div className="container hero-content">
-          <div className="pill-badge" style={{marginBottom: '32px'}}>Your Trusted IT Partner</div>
-          <h1>focus <br/><span className="text-gradient">business</span></h1>
-          <p>Stop worrying about technology problems. Let us provide the support and solutions you deserve to scale effectively.</p>
-          <div className="hero-ctas">
-            <button className="primary-btn">
-              Discover what sets us apart <ArrowRight size={18} />
+      {/* HERO SECTION */}
+      <section className="hero-section">
+        {/* Floating background elements */}
+        <div className="floating-element" style={{top: '20%', left: '15%', animationDelay: '0s'}}>
+          <Database size={32} color="#8b5cf6" />
+        </div>
+        <div className="floating-element" style={{top: '60%', right: '15%', animationDelay: '2s'}}>
+          <Cpu size={32} color="#00f0ff" />
+        </div>
+        <div className="floating-element" style={{top: '70%', left: '25%', animationDelay: '4s'}}>
+          <CloudFog size={32} color="#3b82f6" />
+        </div>
+
+        <motion.div 
+          className="hero-content"
+          initial="hidden" animate="visible" variants={staggerContainer}
+        >
+          <motion.div variants={fadeIn} className="pill-badge" style={{marginBottom: '32px'}}>
+            Premium Technology Partner
+          </motion.div>
+          <motion.h1 variants={fadeIn} className="hero-title">
+            Every Device.<br/>
+            <span className="text-gradient">Managed IT Solutions.</span>
+          </motion.h1>
+          <motion.p variants={fadeIn} className="hero-subtitle">
+            Make IT stress-free with a trusted technology partner dedicated to scaling your business effortlessly.
+          </motion.p>
+          <motion.div variants={fadeIn} className="hero-ctas">
+            <button className="btn-primary">
+              Get Started <ArrowRight size={18} />
+            </button>
+            <button className="btn-outline">
+              Explore Services
+            </button>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* SERVICES SECTION */}
+      <section id="services" className="section services-section container">
+        <motion.div 
+          className="section-header"
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
+        >
+          <div className="pill-badge">Expertise</div>
+          <h2 className="section-title">Our Cutting-Edge <span className="text-gradient-accent">Services</span></h2>
+          <p className="section-subtitle">We deploy sophisticated IT models and frameworks to drive unprecedented growth for your enterprise.</p>
+        </motion.div>
+
+        <motion.div 
+          className="services-grid"
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
+        >
+          {[
+            { icon: <Code2 size={24} />, title: 'Mobile App Development', desc: 'Custom iOS and Android solutions engineered for extreme performance and user engagement.' },
+            { icon: <LineChart size={24} />, title: 'Digital Marketing', desc: 'Data-driven campaigns to skyrocket your brand visibility and precise target audience acquisition.' },
+            { icon: <TestTube size={24} />, title: 'Testing & QA', desc: 'Rigorous automated and manual testing to guarantee flawless software delivery and zero downtime.' },
+            { icon: <Users size={24} />, title: 'IT Staffing', desc: 'Augment your teams with elite industry professionals equipped with the latest technological prowess.' },
+            { icon: <Database size={24} />, title: 'Data & Analytics', desc: 'Unlock powerful insights through advanced data engineering and predictive analytics models.' },
+            { icon: <CloudFog size={24} />, title: 'Salesforce Development', desc: 'Tailored CRM architecture to automate workflows and aggressively optimize your sales pipeline.' }
+          ].map((srv, idx) => (
+            <motion.div key={idx} variants={fadeIn} className="glass-panel service-card">
+              <div className="service-icon">{srv.icon}</div>
+              <h3>{srv.title}</h3>
+              <p>{srv.desc}</p>
+              <a href="#" className="service-link">Learn More <ArrowRight size={16} /></a>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* ABOUT SECTION */}
+      <section id="about" className="section container">
+        <div className="about-grid">
+          <motion.div 
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
+          >
+            <motion.div variants={fadeIn} className="pill-badge">About Us</motion.div>
+            <motion.h2 variants={fadeIn} className="about-highlight">
+              C2N is a trusted IT services company delivering business value with <span className="text-gradient">cutting-edge technology</span>.
+            </motion.h2>
+            <motion.p variants={fadeIn} style={{color: 'var(--c-text-muted)', marginBottom: '40px', fontSize: '1.1rem'}}>
+              We bridge the gap between complex technological challenges and streamlined business operations. Our mission is to engineer systems that practically manage themselves.
+            </motion.p>
+            
+            <motion.div variants={fadeIn} className="stats-grid">
+              <div className="glass-panel stat-card">
+                <div className="stat-number">
+                  250+
+                </div>
+                <div className="stat-label">Projects</div>
+              </div>
+              <div className="glass-panel stat-card">
+                <div className="stat-number">
+                  100+
+                </div>
+                <div className="stat-label">Clients</div>
+              </div>
+              <div className="glass-panel stat-card" style={{gridColumn: '1 / -1'}}>
+                <div className="stat-number">
+                  75+
+                </div>
+                <div className="stat-label">Expert Engineers</div>
+              </div>
+            </motion.div>
+          </motion.div>
+          
+          <motion.div 
+            className="about-image"
+            initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
+          >
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000" alt="Tech Environment" />
+            <div className="floating-element" style={{bottom: '30px', left: '30px', animation: 'float 5s ease-in-out infinite reverse'}}>
+              <div style={{display: 'flex', alignItems: 'center', gap: '12px', color: '#fff', fontWeight: 'bold'}}>
+                <ShieldCheck size={24} color="#00f0ff" /> Secure Infrastructure
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* INDUSTRIES SECTION */}
+      <section id="industries" className="section container">
+        <motion.div 
+          className="section-header"
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
+        >
+          <div className="pill-badge">Sectors</div>
+          <h2 className="section-title">Industries We <span className="text-gradient">Transform</span></h2>
+        </motion.div>
+
+        <motion.div 
+          className="glass-panel" style={{padding: '40px'}}
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
+        >
+          <div className="industries-grid">
+            {[
+              { icon: <HeartPulse size={30} />, name: 'Healthcare' },
+              { icon: <ShoppingCart size={30} />, name: 'Retail' },
+              { icon: <Film size={30} />, name: 'Media' },
+              { icon: <Factory size={30} />, name: 'Manufacturing' },
+              { icon: <Landmark size={30} />, name: 'Finance' },
+              { icon: <UsersRound size={30} />, name: 'Non-Profit' },
+            ].map((ind, i) => (
+              <motion.div key={i} variants={fadeIn} className="industry-card glass-panel" style={{background: 'rgba(255,255,255,0.02)'}}>
+                <div className="industry-icon">{ind.icon}</div>
+                <h4 style={{fontSize: '1.2rem'}}>{ind.name}</h4>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* WHY CHOOSE US */}
+      <section className="section container">
+        <motion.div 
+          className="section-header"
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
+        >
+          <div className="pill-badge">Why Us</div>
+          <h2 className="section-title">The C2N <span className="text-gradient-accent">Advantage</span></h2>
+        </motion.div>
+
+        <motion.div 
+          className="features-grid"
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
+        >
+          {[
+            { icon: <Network size={28} />, title: 'Scalable Solutions', desc: 'Architectures designed to effortlessly grow alongside your ambitious business objectives.' },
+            { icon: <Cpu size={28} />, title: 'Expert Engineers', desc: 'A dedicated team of top-tier talent providing innovative perspectives to complex issues.' },
+            { icon: <HeadphonesIcon size={28} />, title: '24/7 Support', desc: 'Always-on monitoring and immediate remediation to prevent operational bottlenecks.' },
+            { icon: <Settings size={28} />, title: 'Industry Customization', desc: 'Bespoke frameworks molded specifically to the regulatory and functional demands of your sector.' },
+          ].map((feat, i) => (
+            <motion.div key={i} variants={fadeIn} className="glass-panel feature-block">
+              <div className="feature-icon">{feat.icon}</div>
+              <div>
+                <h3 style={{fontSize: '1.4rem', marginBottom: '8px'}}>{feat.title}</h3>
+                <p style={{color: 'var(--c-text-muted)'}}>{feat.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* CLIENT LOGOS MARQUEE */}
+      <section className="clients-section">
+        <div className="marquee-container">
+          <div className="marquee-track">
+            {[...Array(4)].map((_, i) => (
+              <React.Fragment key={i}>
+                <div className="client-logo-wrapper"><Network size={28} /> APEX CORP</div>
+                <div className="client-logo-wrapper"><CloudFog size={28} /> CLOUD SYNC</div>
+                <div className="client-logo-wrapper"><Database size={28} /> DATA FLOW</div>
+                <div className="client-logo-wrapper"><ShieldCheck size={28} /> SECURE IT</div>
+                <div className="client-logo-wrapper"><Cpu size={28} /> NEURAL NET</div>
+                <div className="client-logo-wrapper"><Code2 size={28} /> LOGIC LABS</div>
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA SECTION */}
+      <section className="section container" style={{paddingTop: '60px', paddingBottom: '60px'}}>
+        <motion.div 
+          className="cta-section"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="cta-bg"></div>
+          <div className="cta-content">
+            <h2 className="cta-title">
+              Stop worrying about technology.<br/>
+              <span className="text-gradient">Focus on your business.</span>
+            </h2>
+            <button className="btn-primary" style={{margin: '0 auto', fontSize: '1.1rem', padding: '16px 32px'}}>
+              Let’s Get Started <ArrowRight size={20} />
             </button>
           </div>
-        </div>
-      </main>
+        </motion.div>
+      </section>
 
-      {/* Bento Box About */}
-      <section id="company" className="section">
+      {/* FOOTER */}
+      <footer id="contact" className="footer">
         <div className="container">
-          <div className="text-center" style={{marginBottom: '80px'}}>
-            <div className="pill-badge">Our Company</div>
-            <h2 style={{fontSize: '40px'}}>C2N is your trusted source<br/>in IT services and support</h2>
-          </div>
-
-          <div className="bento-grid">
-            <div className="glass-panel bento-card bento-large">
-              <div style={{color: '#3B82F6', marginBottom: '16px'}}><Shield size={32} /></div>
-              <h2>Built for Scale, Designed for Security.</h2>
-              <p>C2N is a privately owned IT Support and IT Services business formed in 2016. Today we're proud to boast a strong team of IT engineers who thrive on rolling up their sleeves, solving your complex IT problems, and meeting your precise business needs head-on.</p>
-              <div className="bento-img-area"></div>
-            </div>
+          <div className="footer-grid">
             
-            <div className="glass-panel bento-card">
-              <h3 className="text-gradient">How we can help</h3>
-              <p>Architecting custom, industry-compliant solutions tailored for your growth trajectory.</p>
-            </div>
-            
-            <div className="glass-panel bento-card">
-              <h3 className="text-gradient">Why partner with us</h3>
-              <p>Vertical expertise that streamlines your workflow and aggressively increases net productivity.</p>
-            </div>
-            
-            <div className="glass-panel bento-card">
-              <h3 className="text-gradient">Client success stories</h3>
-              <p>Find a solution that's proven to work. Explore how we transformed our clients' operations.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Premium Layout */}
-      <section id="services" className="section services-premium">
-        <div className="container">
-          <div className="text-center">
-            <div className="pill-badge">Core Services</div>
-            <h2 style={{fontSize: '48px'}}>Stay Up, Stay Running,<br/>Stay <span className="text-gradient">Protected</span></h2>
-          </div>
-
-          <div className="grid-3">
-            <div className="glass-panel service-premium-card">
-              <div className="sp-icon"><Users size={32} /></div>
-              <h3>IT Staffing</h3>
-              <p>Close the gap between extreme market demands and new technological trends by augmenting your workforce with top-tier talent.</p>
-              <a href="#" className="sp-link">Learn More <ArrowRight size={16} /></a>
-            </div>
-            <div className="glass-panel service-premium-card">
-              <div className="sp-icon"><Database size={32} /></div>
-              <h3>Data & Analytics</h3>
-              <p>Imagine, design, and streamline your data environment. Complete data-driven analytics to easily discover business opportunities.</p>
-              <a href="#" className="sp-link">Learn More <ArrowRight size={16} /></a>
-            </div>
-            <div className="glass-panel service-premium-card">
-              <div className="sp-icon"><CloudLightning size={32} /></div>
-              <h3>Salesforce Development</h3>
-              <p>Our experts provide end-to-end salesforce development services and customize solutions as per your precise business needs.</p>
-              <a href="#" className="sp-link">Learn More <ArrowRight size={16} /></a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Partner Marquee */}
-      <div className="brands-marquee">
-        <div className="marquee-content">
-          <Hexagon size={48} /> <Activity size={48} /> <Code size={48} /> <Search size={48} />
-          <CloudLightning size={48} /> <Smartphone size={48} /> <Shield size={48} /> 
-          <Hexagon size={48} /> <Activity size={48} /> <Code size={48} /> <Search size={48} />
-          <CloudLightning size={48} /> <Smartphone size={48} /> <Shield size={48} />
-        </div>
-      </div>
-
-      {/* Industries Layout */}
-      <section id="industries" className="section">
-        <div className="container text-center">
-          <div className="pill-badge">Industries</div>
-          <h2 style={{fontSize: '40px', marginBottom: '24px'}}>Managed IT services customized<br/>for your industry</h2>
-          <p style={{color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto'}}>Our vertical solutions expertise allows your business to streamline workflow, and increase productivity.</p>
-
-          <div className="ind-premium-grid">
-            <div className="glass-panel ind-pill"><Heart size={20} color="#3B82F6" /> Healthcare</div>
-            <div className="glass-panel ind-pill"><MonitorPlay size={20} color="#3B82F6" /> Media</div>
-            <div className="glass-panel ind-pill"><Settings size={20} color="#3B82F6" /> Manufacturing</div>
-            <div className="glass-panel ind-pill"><Users size={20} color="#3B82F6" /> Non Profit</div>
-            <div className="glass-panel ind-pill"><MessageSquare size={20} color="#3B82F6" /> Communications</div>
-          </div>
-        </div>
-      </section>
-
-      {/* Dynamic Blog Section */}
-      <section id="resources" className="section">
-        <div className="container">
-          <div className="text-center">
-            <div className="pill-badge">Resources</div>
-            <h2 style={{fontSize: '40px'}}>More articles from library</h2>
-          </div>
-
-          <div className="blog-dynamic">
-            <div className="glass-panel blog-main-card">
-              <div className="bm-img"></div>
-              <div className="bm-body">
-                <div style={{color: '#3B82F6', fontSize: '13px', fontWeight: 600, marginBottom: '8px', letterSpacing: '1px'}}>MAY 8, 2018</div>
-                <h3>5 Lightning Navigation Tips for Salesforce Users</h3>
-                <p style={{color: 'var(--text-secondary)', marginBottom: '24px'}}>Salesforce Lightning has truly brought a lot of power into the hands of both Admins & Users. Meaning that the UI has fundamentally accelerated daily tasks.</p>
-                <button className="glass-btn" style={{border: 'none', background: 'rgba(59,130,246,0.1)', color: '#3B82F6'}}>Read full article <ArrowRight size={16}/></button>
+            <div className="footer-brand">
+              <a href="#" className="nav-logo">
+                <Network size={28} color="#3b82f6" />
+                <span style={{letterSpacing: '1px'}}>C2N</span>
+              </a>
+              <p>Delivering premium IT solutions, digital transformation, and business value through cutting-edge architecture design.</p>
+              <div className="footer-socials">
+                <a href="#"><Twitter size={18} /></a>
+                <a href="#"><Linkedin size={18} /></a>
+                <a href="#"><Github size={18} /></a>
               </div>
             </div>
 
-            <div className="blog-list-vert">
-              <div className="glass-panel bl-item">
-                <div>
-                  <div className="bl-date">MAY 8, 2018</div>
-                  <h4>What Does a Salesforce Admin Do?</h4>
-                  <a href="#" style={{color: 'var(--text-secondary)', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '4px', marginTop: '6px', fontWeight: '500'}}>Read more <ArrowRight size={14}/></a>
-                </div>
-              </div>
-              <div className="glass-panel bl-item">
-                <div>
-                  <div className="bl-date">MAY 8, 2018</div>
-                  <h4>Tips to make Lightning Web Component Performance at front line</h4>
-                  <a href="#" style={{color: 'var(--text-secondary)', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '4px', marginTop: '6px', fontWeight: '500'}}>Read more <ArrowRight size={14}/></a>
-                </div>
-              </div>
-              <div className="glass-panel bl-item">
-                <div>
-                  <div className="bl-date">MAY 8, 2018</div>
-                  <h4>Scan & index manager delivers productivity at beaumont hospital</h4>
-                  <a href="#" style={{color: 'var(--text-secondary)', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '4px', marginTop: '6px', fontWeight: '500'}}>Read more <ArrowRight size={14}/></a>
-                </div>
-              </div>
-              <div className="glass-panel bl-item">
-                <div>
-                  <div className="bl-date">MAY 8, 2018</div>
-                  <h4>Partnering with IT provider helps erie manufacturing company thrive</h4>
-                  <a href="#" style={{color: 'var(--text-secondary)', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '4px', marginTop: '6px', fontWeight: '500'}}>Read more <ArrowRight size={14}/></a>
-                </div>
-              </div>
+            <div>
+              <h4 className="footer-heading">Services</h4>
+              <ul className="footer-links">
+                <li><a href="#">Mobile App Dev</a></li>
+                <li><a href="#">Digital Marketing</a></li>
+                <li><a href="#">Testing & QA</a></li>
+                <li><a href="#">IT Staffing</a></li>
+                <li><a href="#">Salesforce</a></li>
+              </ul>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Epic Parallax Typography */}
-      <section className="epic-values">
-        <div className="epic-overlay"></div>
-        <div className="epic-content container">
-          <p>OUR VALUES</p>
-          <h2>REPUTATION</h2>
-          <p>A LONG HISTORY OF PROVIDING SUCCESS WITHIN THE INDUSTRY</p>
-        </div>
-      </section>
-
-      {/* Footer & CTA */}
-      <footer className="premium-footer">
-        
-        <div className="footer-cta container">
-          <div className="footer-cta-box">
-            <h2>Are you ready for a better,<br/>more productive business?</h2>
-            <p>Stop worrying about technology problems. Focus on your business. Let us provide the support you deserve.</p>
-            <button className="btn-dark">
-              Contact Us Now <ArrowRight size={18} style={{marginLeft: '8px', display: 'inline-block', verticalAlign: 'middle'}}/>
-            </button>
-          </div>
-        </div>
-
-        <div className="container f-grid">
-          <div>
-            <div className="f-logo">
-              <Hexagon size={32} color="#3B82F6" /> C2N
+            <div>
+              <h4 className="footer-heading">Company</h4>
+              <ul className="footer-links">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Industries</a></li>
+                <li><a href="#">Case Studies</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
             </div>
-            <div className="f-contact">
-              Plot: 810, SVS Sowdha, 2nd Floor, Ayyappa Society,<br/>
-              Madhapur, Hyderabad – 500081<br/><br/>
-              P: 040 4006 2299<br/>
-              M: info@c2n.in
+
+            <div>
+              <h4 className="footer-heading">Contact</h4>
+              <ul className="footer-links" style={{display: 'flex', flexDirection: 'column', gap: '16px'}}>
+                <li style={{display: 'flex', gap: '12px', color: 'var(--c-text-muted)', alignItems: 'flex-start'}}>
+                  <MapPin size={20} color="#3b82f6" style={{flexShrink: 0}} />
+                  <span>Suite 810, Tech Hub,<br/>Innovation District</span>
+                </li>
+                <li style={{display: 'flex', gap: '12px', color: 'var(--c-text-muted)', alignItems: 'center'}}>
+                  <Phone size={20} color="#3b82f6" style={{flexShrink: 0}} />
+                  <span>+1 (800) 555-0199</span>
+                </li>
+                <li style={{display: 'flex', gap: '12px', color: 'var(--c-text-muted)', alignItems: 'center'}}>
+                  <Mail size={20} color="#3b82f6" style={{flexShrink: 0}} />
+                  <span>hello@c2n.com</span>
+                </li>
+              </ul>
             </div>
-            <div className="f-social">
-              <a href="#"><Twitter size={18} /></a>
-              <a href="#"><Linkedin size={18} /></a>
-              <a href="#"><Github size={18} /></a>
-            </div>
+
           </div>
 
-          <div className="f-col">
-            <h4 className="text-gradient">IT Services</h4>
-            <ul>
-              <li><a href="#">Salesforce Dev</a></li>
-              <li><a href="#">Mobile App Dev</a></li>
-              <li><a href="#">Testing & QA</a></li>
-              <li><a href="#">Data & Analytics</a></li>
-              <li><a href="#">IT Staffing</a></li>
-            </ul>
+          <div className="footer-bottom">
+            &copy; {new Date().getFullYear()} C2N Technology Solutions. All rights reserved.
           </div>
-
-          <div className="f-col">
-            <h4 className="text-gradient">Industries</h4>
-            <ul>
-              <li><a href="#">Healthcare</a></li>
-              <li><a href="#">Non Profit</a></li>
-              <li><a href="#">Financial Services</a></li>
-              <li><a href="#">Communications</a></li>
-              <li><a href="#">Manufacturing</a></li>
-            </ul>
-          </div>
-
-          <div className="f-col">
-            <h4 className="text-gradient">Company</h4>
-            <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Leadership Team</a></li>
-              <li><a href="#">IT Blog</a></li>
-              <li><a href="#">Case Studies</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-            </ul>
-          </div>
-        </div>
-        
-        <div className="f-bottom">
-          &copy; {new Date().getFullYear()} C2N Technology Solutions. All rights reserved.
         </div>
       </footer>
+
     </div>
   );
 }
