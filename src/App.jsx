@@ -304,65 +304,78 @@ function App() {
 
       {/* FOOTER */}
       <footer id="contact" className="footer">
+        <div className="footer-glow"></div>
         <div className="container">
           <div className="footer-grid">
             
             <div className="footer-brand">
-              <a href="#" className="nav-logo">
-              <img src="/C2N-logo.png" alt="C2N Logo" style={{ height: '36px', objectFit: 'contain' }} />
+              <a href="#" className="nav-logo" style={{marginBottom: '20px'}}>
+                <img src="/C2N-logo.png" alt="C2N Logo" style={{ height: '40px', objectFit: 'contain' }} />
               </a>
-              <p>Your premier partner for IT staffing and innovative software development solutions.</p>
+              <p style={{fontSize: '1rem', lineHeight: '1.6', marginBottom: '24px'}}>Your trusted partner for modern IT solutions, strategic staffing, and digital transformation. We simplify technology to empower your business growth.</p>
               <div className="footer-socials">
-                <a href="#"><Twitter size={18} /></a>
-                <a href="#"><Linkedin size={18} /></a>
-                <a href="#"><Github size={18} /></a>
+                <a href="#" aria-label="Twitter"><Twitter size={20} /></a>
+                <a href="#" aria-label="LinkedIn"><Linkedin size={20} /></a>
+                <a href="#" aria-label="GitHub"><Github size={20} /></a>
               </div>
             </div>
 
             <div>
               <h4 className="footer-heading">Solutions</h4>
               <ul className="footer-links">
-                <li><a href="#">IT Staffing</a></li>
-                <li><a href="#">Custom Dev</a></li>
-                <li><a href="#">Team Augmentation</a></li>
-                <li><a href="#">Product Design</a></li>
-                <li><a href="#">Cloud Strategy</a></li>
+                <li><a href="#services">IT Staffing</a></li>
+                <li><a href="#services">Custom Dev</a></li>
+                <li><a href="#services">Cloud Strategy</a></li>
+                <li><a href="#services">Managed Services</a></li>
+                <li><a href="#services">Data Security</a></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="footer-heading">Company</h4>
+              <h4 className="footer-heading">C2N Company</h4>
               <ul className="footer-links">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Industries</a></li>
-                <li><a href="#">Case Studies</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#about">Our motive</a></li>
+                <li><a href="#about">Case Studies</a></li>
+                <li><a href="#industries">Industries</a></li>
+                <li><a href="#">Join the Team</a></li>
+                <li><a href="#">Contact Us</a></li>
               </ul>
             </div>
 
-            <div>
-              <h4 className="footer-heading">Contact</h4>
-              <ul className="footer-links" style={{display: 'flex', flexDirection: 'column', gap: '16px'}}>
-                <li style={{display: 'flex', gap: '12px', color: 'var(--c-text-muted)', alignItems: 'flex-start'}}>
-                  <MapPin size={20} color="#3b82f6" style={{flexShrink: 0}} />
-                  <span>Suite 810, Tech Hub,<br/>Innovation District</span>
-                </li>
-                <li style={{display: 'flex', gap: '12px', color: 'var(--c-text-muted)', alignItems: 'center'}}>
-                  <Phone size={20} color="#3b82f6" style={{flexShrink: 0}} />
-                  <span>+1 (800) 555-0199</span>
-                </li>
-                <li style={{display: 'flex', gap: '12px', color: 'var(--c-text-muted)', alignItems: 'center'}}>
-                  <Mail size={20} color="#3b82f6" style={{flexShrink: 0}} />
-                  <span>hello@c2n.com</span>
-                </li>
-              </ul>
+            <div className="footer-newsletter">
+              <h4 className="footer-heading">Stay Connected</h4>
+              <p style={{color: 'var(--c-text-muted)', fontSize: '0.9rem', marginBottom: '20px'}}>Get the latest tech insights and growth strategies.</p>
+              <div className="subscribe-box">
+                <input type="email" placeholder="email@example.com" />
+                <button className="btn-primary" style={{padding: '8px 16px', borderRadius: '8px', fontSize: '13px'}}>Join</button>
+              </div>
             </div>
+          </div>
 
+          <div className="footer-info-row">
+            <div className="info-item">
+              <MapPin size={18} color="var(--c-primary)" />
+              <span>Innovate Hub, Bangalore, India</span>
+            </div>
+            <div className="info-item">
+              <Phone size={18} color="var(--c-primary)" />
+              <span>+91 80 1234 5678</span>
+            </div>
+            <div className="info-item">
+              <Mail size={18} color="var(--c-primary)" />
+              <span>hello@c2n.in</span>
+            </div>
           </div>
 
           <div className="footer-bottom">
-            &copy; {new Date().getFullYear()} C2N Technology Solutions. All rights reserved.
+            <div className="footer-legal">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Security</a>
+            </div>
+            <div className="copyright">
+              &copy; {new Date().getFullYear()} C2N solutions. Empowering Business.
+            </div>
           </div>
         </div>
       </footer>
