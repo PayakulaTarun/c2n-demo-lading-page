@@ -39,16 +39,16 @@
   opacity: 0.5;
 }
 
-.glow-blue {
-  background: rgba(59, 130, 246, 0.3);
+.glow-teal {
+  background: rgba(0, 88, 94, 0.4);
   width: 500px;
   height: 500px;
   top: -100px;
   left: -100px;
 }
 
-.glow-purple {
-  background: rgba(139, 92, 246, 0.3);
+.glow-soft {
+  background: rgba(77, 182, 172, 0.3);
   width: 600px;
   height: 600px;
   bottom: -200px;
@@ -147,11 +147,11 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 15px rgba(0, 88, 94, 0.4);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 0 25px rgba(59, 130, 246, 0.7);
+  box-shadow: 0 0 25px rgba(0, 88, 94, 0.7);
   transform: translateY(-2px);
 }
 
@@ -268,6 +268,18 @@
   overflow: hidden;
 }
 
+.service-card::after {
+  content: ':::';
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: var(--c-primary);
+  opacity: 0.1;
+  font-family: var(--font-heading);
+  letter-spacing: 2px;
+}
+
 .service-card::before {
   content: '';
   position: absolute;
@@ -288,20 +300,20 @@
 .service-card:hover {
   transform: translateY(-5px) scale(1.02);
   box-shadow: var(--shadow-glow-hover);
-  border-color: rgba(59, 130, 246, 0.4);
+  border-color: rgba(0, 88, 94, 0.4);
 }
 
 .service-icon {
   width: 60px;
   height: 60px;
   border-radius: 12px;
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(0, 88, 94, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 24px;
   color: var(--c-primary);
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(0, 88, 94, 0.2);
 }
 
 .service-card h3 {
@@ -577,7 +589,7 @@
 
 .footer-socials a:hover {
   background: var(--c-primary);
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 15px rgba(0, 88, 94, 0.5);
 }
 
 .footer-heading {

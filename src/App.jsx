@@ -35,8 +35,8 @@ function App() {
   return (
     <div className="app-wrapper">
       <div className="grid-bg"></div>
-      <div className="glow-orb glow-blue"></div>
-      <div className="glow-orb glow-purple"></div>
+      <div className="glow-orb glow-teal"></div>
+      <div className="glow-orb glow-soft"></div>
 
       {/* NAVBAR */}
       <nav className="premium-nav">
@@ -86,18 +86,18 @@ function App() {
           initial="hidden" animate="visible" variants={staggerContainer}
         >
           <motion.div variants={fadeIn} className="pill-badge" style={{marginBottom: '32px'}}>
-            Premium Technology Partner
+            Staffing & Development Excellence
           </motion.div>
           <motion.h1 variants={fadeIn} className="hero-title">
-            Every Device.<br/>
-            <span className="text-gradient">Managed IT Solutions.</span>
+            Empowering Business Through<br/>
+            <span className="text-gradient">Modern IT Solutions.</span>
           </motion.h1>
           <motion.p variants={fadeIn} className="hero-subtitle">
-            Make IT stress-free with a trusted technology partner dedicated to scaling your business effortlessly.
+            C2N’s motive is to empower businesses by using technology to simplify operations, solve problems, and drive growth.
           </motion.p>
           <motion.div variants={fadeIn} className="hero-ctas">
             <button className="btn-primary">
-              Get Started <ArrowRight size={18} />
+              Solve Your Tech Problems <ArrowRight size={18} />
             </button>
             <button className="btn-outline">
               Explore Services
@@ -113,9 +113,9 @@ function App() {
             className="section-header"
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
         >
-          <div className="pill-badge">Expertise</div>
-          <h2 className="section-title">Our Cutting-Edge <span className="text-gradient-accent">Services</span></h2>
-          <p className="section-subtitle">We deploy sophisticated IT models and frameworks to drive unprecedented growth for your enterprise.</p>
+          <div className="pill-badge">Our Mission</div>
+          <h2 className="section-title">Making Technology <span className="text-gradient-accent">Simple & Stress-Free</span></h2>
+          <p className="section-subtitle">We act as your dedicated technology partner, helping you focus on your business goals while we handle the technical complexities.</p>
         </motion.div>
 
         <motion.div 
@@ -123,12 +123,12 @@ function App() {
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
         >
           {[
-            { icon: <Code2 size={24} />, title: 'Mobile App Development', desc: 'Custom iOS and Android solutions engineered for extreme performance and user engagement.' },
-            { icon: <LineChart size={24} />, title: 'Digital Marketing', desc: 'Data-driven campaigns to skyrocket your brand visibility and precise target audience acquisition.' },
-            { icon: <TestTube size={24} />, title: 'Testing & QA', desc: 'Rigorous automated and manual testing to guarantee flawless software delivery and zero downtime.' },
-            { icon: <Users size={24} />, title: 'IT Staffing', desc: 'Augment your teams with elite industry professionals equipped with the latest technological prowess.' },
-            { icon: <Database size={24} />, title: 'Data & Analytics', desc: 'Unlock powerful insights through advanced data engineering and predictive analytics models.' },
-            { icon: <CloudFog size={24} />, title: 'Salesforce Development', desc: 'Tailored CRM architecture to automate workflows and aggressively optimize your sales pipeline.' }
+            { icon: <Code2 size={24} />, title: 'Problem Solving', desc: 'We build custom software, apps, and systems specifically designed to remove your technical headaches.' },
+            { icon: <CloudFog size={24} />, title: 'Digital Transformation', desc: 'Future-proof your business by adopting modern technologies like Cloud, AI, and Salesforce.' },
+            { icon: <LineChart size={24} />, title: 'Growth & Productivity', desc: 'Optimize your operations using data and automation to streamline workflows and boost performance.' },
+            { icon: <UsersRound size={24} />, title: 'IT Staffing & Hiring', desc: 'Elite recruitment solutions to augment your teams with the perfect technical and cultural fit.' },
+            { icon: <Database size={24} />, title: 'Infrastructure Management', desc: 'End-to-end handling of your IT ecosystem, from deployment to 24/7 proactive maintenance.' },
+            { icon: <ShieldCheck size={24} />, title: 'Strategic Partnership', desc: 'We work as a long-term partner, not just a service provider, to build sustainable tech-driven businesses.' }
           ].map((srv, idx) => (
             <motion.div key={idx} variants={fadeIn} className="glass-panel service-card">
               <div className="service-icon">{srv.icon}</div>
@@ -149,10 +149,10 @@ function App() {
           >
             <motion.div variants={fadeIn} className="pill-badge">About Us</motion.div>
             <motion.h2 variants={fadeIn} className="about-highlight">
-              C2N is a trusted IT services company delivering business value with <span className="text-gradient">cutting-edge technology</span>.
+              Your technology partner for <span className="text-gradient">seamless business growth</span>.
             </motion.h2>
             <motion.p variants={fadeIn} style={{color: 'var(--c-text-muted)', marginBottom: '40px', fontSize: '1.1rem', lineHeight: '1.7'}}>
-              We bridge the gap between complex technological challenges and streamlined business operations. At C2N, we believe technology should be an enabler, not a bottleneck. For years we've partnered with startups to tech-enterprises across the globe, transforming legacy architecture into scalable, secure powerhouses. Our core focus is the relentless delivery of long-term business value through precise strategy and execution.
+              At C2N, our motive is simple: to help businesses grow and run smoothly by solving their technology problems using modern IT solutions. We believe technology should be an enabler, not a bottleneck. We act as your long-term partner, removing technical headaches so you can focus on what you do best—managing your business. From digital transformation to custom engineering, we deliver real business value through strategic innovation.
             </motion.p>
             
             <motion.div variants={fadeIn} className="stats-grid">
@@ -246,10 +246,10 @@ function App() {
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
         >
           {[
-            { icon: <Network size={28} />, title: 'Scalable Solutions', desc: 'Architectures designed to effortlessly grow alongside your ambitious business objectives.' },
-            { icon: <Cpu size={28} />, title: 'Expert Engineers', desc: 'A dedicated team of top-tier talent providing innovative perspectives to complex issues.' },
-            { icon: <HeadphonesIcon size={28} />, title: '24/7 Support', desc: 'Always-on monitoring and immediate remediation to prevent operational bottlenecks.' },
-            { icon: <Settings size={28} />, title: 'Industry Customization', desc: 'Bespoke frameworks molded specifically to the regulatory and functional demands of your sector.' },
+            { icon: <HeadphonesIcon size={28} />, title: 'Stress-Free Tech', desc: 'We take full responsibility for your technical challenges, making IT management effortless.' },
+            { icon: <Cpu size={28} />, title: 'Real Business Value', desc: 'Every solution we build is measured by how much it contributes to your growth and productivity.' },
+            { icon: <Network size={28} />, title: 'Modern IT Solutions', desc: 'Leveraging Cloud, AI, and Automation to make your organization future-ready and efficient.' },
+            { icon: <ShieldCheck size={28} />, title: 'Sustainable Growth', desc: 'Strategic long-term planning to ensure your technology scales perfectly with your business goals.' },
           ].map((feat, i) => (
             <motion.div key={i} variants={fadeIn} className="glass-panel feature-block">
               <div className="feature-icon">{feat.icon}</div>
@@ -292,8 +292,8 @@ function App() {
           <div className="cta-bg"></div>
           <div className="cta-content">
             <h2 className="cta-title">
-              Stop worrying about technology.<br/>
-              <span className="text-gradient">Focus on your business.</span>
+              Stop worrying about technical issues.<br/>
+              <span className="text-gradient">Start focusing on your business.</span>
             </h2>
             <button className="btn-primary" style={{margin: '0 auto', fontSize: '1.1rem', padding: '16px 32px'}}>
               Let’s Get Started <ArrowRight size={20} />
@@ -309,9 +309,9 @@ function App() {
             
             <div className="footer-brand">
               <a href="#" className="nav-logo">
-                <img src="/C2N-logo.png" alt="C2N Logo" style={{ height: '36px', objectFit: 'contain' }} />
+              <img src="/C2N-logo.png" alt="C2N Logo" style={{ height: '36px', objectFit: 'contain' }} />
               </a>
-              <p>Delivering premium IT solutions, digital transformation, and business value through cutting-edge architecture design.</p>
+              <p>Your premier partner for IT staffing and innovative software development solutions.</p>
               <div className="footer-socials">
                 <a href="#"><Twitter size={18} /></a>
                 <a href="#"><Linkedin size={18} /></a>
@@ -320,13 +320,13 @@ function App() {
             </div>
 
             <div>
-              <h4 className="footer-heading">Services</h4>
+              <h4 className="footer-heading">Solutions</h4>
               <ul className="footer-links">
-                <li><a href="#">Mobile App Dev</a></li>
-                <li><a href="#">Digital Marketing</a></li>
-                <li><a href="#">Testing & QA</a></li>
                 <li><a href="#">IT Staffing</a></li>
-                <li><a href="#">Salesforce</a></li>
+                <li><a href="#">Custom Dev</a></li>
+                <li><a href="#">Team Augmentation</a></li>
+                <li><a href="#">Product Design</a></li>
+                <li><a href="#">Cloud Strategy</a></li>
               </ul>
             </div>
 
