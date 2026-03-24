@@ -56,7 +56,7 @@ function App() {
               style={{
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 width: '36px', height: '36px', borderRadius: '50%',
-                background: 'rgba(59, 130, 246, 0.1)', cursor: 'pointer'
+                background: 'rgba(45, 180, 156, 0.1)', cursor: 'pointer'
               }}
             >
               {theme === 'dark' ? <Sun size={18} color="var(--c-primary)" /> : <Moon size={18} color="var(--c-primary)" />}
